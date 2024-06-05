@@ -1,0 +1,25 @@
+@import 'colors';
+@import 'spacing';
+@import 'mixins';
+
+$button-types: (
+  discover: $primary-color,
+  login: $secondary-color,
+  contact: $tertiary-color
+);
+
+@each $type, $color in $button-types {
+  .button.#{$type} {
+    background-color: $color;
+    color: #fff;
+    padding: $padding-base;
+    margin: $margin-base;
+    border: none;
+    cursor: pointer;
+    @include transition(all 0.3s ease);
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

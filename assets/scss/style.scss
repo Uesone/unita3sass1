@@ -1,0 +1,100 @@
+@import 'partials/reset';
+@import 'partials/colors';
+@import 'partials/fonts';
+@import 'partials/spacing';
+@import 'partials/buttons';
+@import 'partials/mixins';
+@import 'partials/animations';
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+}
+
+header {
+  width: 100%;
+  background-color: $hero-background;
+  @include flex-center;
+  flex-direction: column;
+
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: $padding-base;
+    background-color: darken($hero-background, 10%);
+  }
+
+  .logo {
+    font-size: $font-size-lg;
+    font-weight: bold;
+    img {
+      width: 50px; 
+      height: auto; 
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: $spacing-base;
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+}
+
+.hero {
+  width: 100%;
+  background-color: $hero-background;
+  padding: $padding-base;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .text-content {
+    .headline {
+      @include title-big;
+      margin-bottom: $margin-base;
+    }
+
+    .description {
+      margin-bottom: $margin-base;
+    }
+
+    .buttons {
+      display: flex;
+      gap: $spacing-base;
+    }
+  }
+
+  .image {
+    max-width: 50%;
+    height: auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      max-height: 100%; 
+    }
+  }
+}
+
+.grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $spacing-base;
+  background-color: #fff;
+
+  .grid-item {
+    padding: $padding-base;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+  }
+}

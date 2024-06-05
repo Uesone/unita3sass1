@@ -1,0 +1,29 @@
+$padding-base: 1rem;
+$margin-base: 1rem;
+$spacing-base: 1rem;
+
+
+
+$spacing-values: (
+  sm: 0.5rem,
+  normal: 1rem,
+  md: 1.5rem,
+  lg: 2rem,
+  xl: 3rem,
+  xxl: 4rem
+);
+
+@each $size, $value in $spacing-values {
+  .padding-block-#{$size} {
+    padding-block: $value;
+  }
+  .padding-inline-#{$size} {
+    padding-inline: $value;
+  }
+  .margin-block-#{$size} {
+    margin-block: $value;
+  }
+  .margin-inline-#{$size} {
+    margin-inline: $value;
+  }
+}
